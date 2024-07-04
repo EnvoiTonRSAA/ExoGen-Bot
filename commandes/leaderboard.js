@@ -2,11 +2,9 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const sqlite3 = require('sqlite3').verbose();
 
-// Utilisation des bases de données existantes
 const basicDB = new sqlite3.Database('./cooldowns.db');
 const premiumDB = new sqlite3.Database('./pcooldowns.db');
 
-// Liste des générateurs avec leur nom et valeur
 const generators = [
     { name: 'Free gen', value: 'basic' },
     { name: 'Premium gen', value: 'premium' }
@@ -35,7 +33,6 @@ module.exports = {
             return interaction.reply({ content: 'Invalid generator type specified.', ephemeral: true });
         }
 
-        // Récupération des utilisateurs les plus actifs depuis la base de données
         db.all("SELECT userId, generationCount FROM cooldowns ORDER BY generationCount DESC LIMIT 100", (err, rows) => {
             if (err) {
                 console.error(err);
