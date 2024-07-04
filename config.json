@@ -1,0 +1,15 @@
+{
+  "bot_token": "TOKEN",
+
+  "client_id": "ID",
+  "server_id": "ID",
+
+  "bgen_cooldown": 20,
+  "pgen_cooldown": 2,
+
+  "bgen_channel": "ID",
+  "pgen_channel": "ID",
+
+  "statut_name": ".gg/exogen",
+  "statut_type": "WATCHING"
+}
