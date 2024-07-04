@@ -12,6 +12,7 @@ const client = new Client({
 });
 
 client.once('ready', () => {
+    console.log(`discord : heroine667`);
     console.log(`Connecté en tant que ${client.user.tag} !`);
     client.user.setActivity(config.statut_name, { type: config.statut_type });
     loadSlashCommands(client);
